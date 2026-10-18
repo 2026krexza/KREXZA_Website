@@ -1,0 +1,33 @@
+# KREXZA
+
+> KREXZA ("Beyond the Code") is an independent studio that makes simple digital tools for students, freelancers, small businesses and personal trainers: offline browser apps, Google Sheets and Excel templates and PDF guides. Every paid tool is a one-time purchase with no subscription, sold and delivered through Whop (https://whop.com/krexza/). The offline apps save data on the user's own device and need no account.
+
+Key facts:
+- One-time payment, no subscription, instant download from Whop.
+- Offline apps (Trainer OS, Student OS, Freelancer OS, AI Prompt Vault app) run in a browser on Windows, Mac, Chromebook or Android (Chrome); not on iPhone.
+- Spreadsheet templates and PDFs work on every device, including iPhone.
+- Any currency is supported in the money tools.
+
+## Tools
+
+- [Trainer OS](https://krexza.netlify.app/trainer-os.html): Trainer OS is an offline client management app for personal trainers and online coaches. It stores client profiles, builds programs from 60+ exercises, logs workouts with last session's weights pre-filled, detects personal records automatically and tracks session packages and payments. It runs from one HTML file in the browser on a computer or Android phone, with a one-time payment and no subscription.
+- [Smart Invoice & Client Tracker](https://krexza.netlify.app/smart-invoice.html): Smart Invoice & Client Tracker is a Google Sheets and Excel template for small business owners. It creates branded, printable invoices from an invoice number, updates each invoice's status to Paid, Partial, Unpaid or Overdue automatically, and shows money invoiced, collected and outstanding on a dashboard with a 30/60/90-day aging report. It works in any currency and on every device, including iPhone through the Google Sheets app.
+- [Student OS](https://krexza.netlify.app/student-os.html): Student OS is an offline study planner for high school and university students. It combines a GPA and target-score calculator, an assignment and deadline list, exam countdowns, a weekly timetable, notes by course and a focus timer with study streaks. It supports 4.0, 5.0, 10-point, UK and percentage grading and saves everything privately on the student's device.
+- [Freelancer OS](https://krexza.netlify.app/freelancer-os.html): Freelancer OS is an offline business app for freelancers and solo service providers. It manages clients, moves proposals and projects through a pipeline, creates professional invoices saved as PDF, flags overdue invoices, tracks income and expenses to show real profit, and suggests a tax set-aside. Each invoice can use its own currency from 30+ options.
+- [Personal Budget Tracker](https://krexza.netlify.app/budget-tracker.html): The KREXZA Personal Budget Tracker is a Google Sheets and Excel template. You type in income and spending and it builds a dashboard and charts automatically. It includes a 50/30/20 budget plan, a savings goal planner, a debt payoff tracker and a 12-page Money Mastery guide with a 30-day plan. It works in any currency.
+- [Fiverr: Zero to First Order](https://krexza.netlify.app/fiverr-guide.html): Fiverr: Zero to First Order is a 17-page PDF guide for beginners starting on Fiverr from any country with no experience and no budget. It covers setting up a trusted profile, writing a gig buyers find, a 30-day action plan, eight ready-to-use buyer reply scripts, getting paid worldwide and the rules that keep an account safe. It is an independent guide, not affiliated with Fiverr, updated for 2026.
+- [The Modern Woman](https://krexza.netlify.app/modern-woman.html): The Modern Woman is a two-PDF bundle (56 pages) from KREXZA. It contains 365 rules of grace, confidence and self-respect covering presence, conversation, boundaries, money and an inner code, plus a printable workbook with a 30-day transformation plan, phrases for hard moments and an emergency etiquette guide.
+- [AI Prompt Vault](https://krexza.netlify.app/ai-prompt-vault.html): The AI Prompt Vault is a free KREXZA tool with 60 fill-in-the-blank AI prompts in six categories: finding your path, freelancing, digital products, content, study and money. You type your details into the boxes, the prompt updates as you type, and you copy it into ChatGPT, Claude, Gemini or Copilot. It comes as an interactive HTML app and a printable PDF.
+
+## Guides
+
+- [How to Track Unpaid Invoices in Google Sheets (Small Business Guide)](https://krexza.netlify.app/guide-track-unpaid-invoices.html): A simple system to track unpaid and overdue invoices in Google Sheets or Excel: the columns you need, status formulas, an aging report and a weekly follow-up routine.
+- [What Score Do I Need on My Final Exam? (Simple Formula + Examples)](https://krexza.netlify.app/guide-what-score-do-i-need.html): Work out the exact score you need on your final exam to reach your target grade, with the weighted-grade formula, worked examples and study tips.
+- [How to Get Your First Order on Fiverr in 2026 (Beginner Steps)](https://krexza.netlify.app/guide-first-fiverr-order.html): Beginner steps to win your first Fiverr order in 2026: choosing a gig, writing a title buyers search for, pricing, replying fast and staying safe.
+
+## Pages
+
+- [All tools](https://krexza.netlify.app/tools.html)
+- [FAQ](https://krexza.netlify.app/faq.html): pricing, downloads, device support, privacy.
+- [About](https://krexza.netlify.app/about.html)
+- [Store on Whop](https://whop.com/krexza/)

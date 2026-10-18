@@ -289,3 +289,15 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .fab.off{opacity:0;transform:translateY(16px);pointer-events:none}
 @media (max-width:520px){ .fab{min-height:48px;padding:0 18px;font-size:14px} .ftr-bot{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))} }
 @media (prefers-reduced-motion: reduce){ *{animation:none!important;transition:none!important} }
+/* ---- SEO additions: summary, articles ---- */
+.pb0{padding-bottom:0!important}
+.summary{max-width:980px}
+.summary-p{font-size:clamp(19px,1.8vw,24px);line-height:1.55;color:var(--muted);margin-top:14px}
+.summary-p strong{color:var(--text);font-weight:500}
+.article{max-width:760px;color:var(--muted);font-size:clamp(17px,1.4vw,19px);line-height:1.7}
+.article h2{font-size:clamp(28px,3.2vw,40px);color:var(--text);margin:44px 0 14px}
+.article h2:first-child{margin-top:0}
+.article p{margin:0 0 16px}
+.article ul{margin:0 0 18px;padding-left:1.2em;display:flex;flex-direction:column;gap:8px}
+.article li::marker{color:var(--stone)}
+.art-cta{margin-top:36px}
