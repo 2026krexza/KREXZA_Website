@@ -1,1297 +1,179 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>KREXZA · Digital Tools for Students, Freelancers & Small Businesses</title>
-  <meta name="description"
-    content="KREXZA makes simple digital tools for students, freelancers, small businesses and personal trainers. Offline apps, Google Sheets templates and guides. Pay once, keep forever.">
-  <meta name="theme-color" content="#0D0B21">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap">
-  <style>
-    /* Layout: midnight workshop. Night-sky hero, then an "I am a…" product finder as the centre of the page, honest trust blocks, FAQ. Dark-first. */
-    :root {
-      --bg: #0D0B21;
-      --bg2: #141136;
-      --card: #1A1640;
-      --line: rgba(205, 198, 255, .12);
-      --line2: rgba(205, 198, 255, .22);
-      --text: #F2F0FF;
-      --muted: #A9A4CF;
-      --accent: #8B7CF6;
-      --accent-ink: #C9C1FF;
-      --mint: #34D399;
-      --amber: #F5B544;
-      --btn-ink: #120F2E;
-      --shadow: 0 24px 60px rgba(0, 0, 0, .45);
-      --display: "Lora", Georgia, "Times New Roman", serif;
-      --body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      --r: 18px;
-      color-scheme: dark;
-    }
-
-    @media (prefers-color-scheme: light) {
-      :root:not([data-theme="dark"]) {
-        --bg: #F6F4FC;
-        --bg2: #ECE8FA;
-        --card: #FFFFFF;
-        --line: rgba(30, 20, 90, .10);
-        --line2: rgba(30, 20, 90, .18);
-        --text: #18153A;
-        --muted: #5E5985;
-        --accent: #6C5CE7;
-        --accent-ink: #5243D4;
-        --mint: #0F9F6E;
-        --amber: #B7790F;
-        --btn-ink: #FFFFFF;
-        --shadow: 0 20px 50px rgba(40, 30, 110, .12);
-        color-scheme: light
-      }
-    }
-
-    :root[data-theme="light"] {
-      --bg: #F6F4FC;
-      --bg2: #ECE8FA;
-      --card: #FFFFFF;
-      --line: rgba(30, 20, 90, .10);
-      --line2: rgba(30, 20, 90, .18);
-      --text: #18153A;
-      --muted: #5E5985;
-      --accent: #6C5CE7;
-      --accent-ink: #5243D4;
-      --mint: #0F9F6E;
-      --amber: #B7790F;
-      --btn-ink: #FFFFFF;
-      --shadow: 0 20px 50px rgba(40, 30, 110, .12);
-      color-scheme: light
-    }
-
-    :root.force-light {
-      --bg: #F6F4FC;
-      --bg2: #ECE8FA;
-      --card: #FFFFFF;
-      --line: rgba(30, 20, 90, .10);
-      --line2: rgba(30, 20, 90, .18);
-      --text: #18153A;
-      --muted: #5E5985;
-      --accent: #6C5CE7;
-      --accent-ink: #5243D4;
-      --mint: #0F9F6E;
-      --amber: #B7790F;
-      --btn-ink: #FFFFFF;
-      --shadow: 0 20px 50px rgba(40, 30, 110, .12);
-      color-scheme: light
-    }
-
-    :root.force-dark {
-      --bg: #0D0B21;
-      --bg2: #141136;
-      --card: #1A1640;
-      --line: rgba(205, 198, 255, .12);
-      --line2: rgba(205, 198, 255, .22);
-      --text: #F2F0FF;
-      --muted: #A9A4CF;
-      --accent: #8B7CF6;
-      --accent-ink: #C9C1FF;
-      --mint: #34D399;
-      --amber: #F5B544;
-      --btn-ink: #120F2E;
-      --shadow: 0 24px 60px rgba(0, 0, 0, .45);
-      color-scheme: dark;
-    }
-
-    * {
-      box-sizing: border-box
-    }
-
-    html {
-      scroll-behavior: smooth
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto
-      }
-
-      * {
-        animation: none !important;
-        transition: none !important
-      }
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--body);
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased
-    }
-
-    a {
-      color: inherit
-    }
-
-    img {
-      max-width: 100%;
-      height: auto
-    }
-
-    .wrap {
-      max-width: 1160px;
-      margin: 0 auto;
-      padding-left: max(20px, env(safe-area-inset-left, 0px));
-      padding-right: max(20px, env(safe-area-inset-right, 0px))
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-family: var(--display);
-      font-weight: 500;
-      line-height: 1.12;
-      text-wrap: balance;
-      margin: 0
-    }
-
-    p {
-      margin: 0
-    }
-
-    .eyebrow {
-      font-size: 12px;
-      letter-spacing: .32em;
-      text-transform: uppercase;
-      color: var(--accent-ink);
-      font-weight: 600
-    }
-
-    :focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
-      border-radius: 8px
-    }
-
-    /* header */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0 0 auto;
-      height: env(safe-area-inset-top, 0px);
-      z-index: 30;
-      background: var(--bg)
-    }
-
-    header {
-      position: sticky;
-      top: env(safe-area-inset-top, 0px);
-      z-index: 20;
-      background: color-mix(in srgb, var(--bg) 82%, transparent);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid transparent;
-      transition: border-color .2s
-    }
-
-    header.scrolled {
-      border-bottom-color: var(--line)
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      height: 68px
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      font-weight: 700;
-      letter-spacing: .38em;
-      font-size: 15px
-    }
-
-    .brand svg {
-      flex: none
-    }
-
-    .nav nav {
-      display: flex;
-      gap: 22px;
-      margin-left: auto;
-      font-size: 14.5px;
-      color: var(--muted)
-    }
-
-    .nav nav a {
-      text-decoration: none
-    }
-
-    .nav nav a:hover {
-      color: var(--text)
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 13px 22px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 15px;
-      text-decoration: none;
-      border: 1px solid transparent;
-      cursor: pointer;
-      font-family: inherit;
-      transition: transform .15s, background .15s, border-color .15s;
-      white-space: nowrap
-    }
-
-    .btn:hover {
-      transform: translateY(-1px)
-    }
-
-    .btn.p {
-      background: var(--accent);
-      color: #fff
-    }
-
-    .btn.g {
-      border-color: var(--line2);
-      color: var(--text);
-      background: transparent
-    }
-
-    .btn.g:hover {
-      border-color: var(--accent)
-    }
-
-    .btn.sm {
-      padding: 9px 16px;
-      font-size: 14px
-    }
-
-    .theme {
-      background: none;
-      border: 1px solid var(--line2);
-      color: var(--muted);
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: grid;
-      place-items: center
-    }
-
-    @media (max-width:760px) {
-      .nav nav {
-        display: none
-      }
-
-      .nav .btn.sm {
-        margin-left: auto
-      }
-    }
-
-    /* launch strip */
-    .strip {
-      background: linear-gradient(90deg, color-mix(in srgb, var(--amber) 22%, transparent), color-mix(in srgb, var(--accent) 18%, transparent));
-      border-bottom: 1px solid var(--line);
-      font-size: 14px
-    }
-
-    .strip .wrap {
-      display: flex;
-      gap: 10px 18px;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding-block: 10px;
-      text-align: center
-    }
-
-    .code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-weight: 700;
-      letter-spacing: .08em;
-      border: 1px dashed var(--amber);
-      padding: 2px 10px;
-      border-radius: 8px;
-      background: none;
-      color: var(--text);
-      cursor: pointer;
-      font-size: 13.5px
-    }
-
-    /* hero */
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding-block: 72px 64px
-    }
-
-    #sky {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      opacity: .9;
-      pointer-events: none
-    }
-
-    .hero .wrap {
-      position: relative;
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
-      gap: 48px;
-      align-items: center
-    }
-
-    .hero h1 {
-      font-size: clamp(40px, 6vw, 68px);
-      margin-top: 18px
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      color: var(--accent-ink)
-    }
-
-    .lede {
-      font-size: clamp(17px, 1.6vw, 19px);
-      color: var(--muted);
-      margin-top: 20px;
-      max-width: 34em
-    }
-
-    .cta-row {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 30px
-    }
-
-    .promise {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 18px;
-      margin-top: 30px;
-      font-size: 14px;
-      color: var(--muted);
-      padding: 0;
-      list-style: none
-    }
-
-    .promise li {
-      display: flex;
-      align-items: center;
-      gap: 7px
-    }
-
-    .promise li::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--mint)
-    }
-
-    .stack {
-      position: relative;
-      aspect-ratio: 1/0.82;
-      max-width: 100%
-    }
-
-    .stack img {
-      position: absolute;
-      width: 78%;
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--line2)
-    }
-
-    .stack img:nth-child(1) {
-      left: 0;
-      top: 4%;
-      transform: rotate(-5deg)
-    }
-
-    .stack img:nth-child(2) {
-      right: 0;
-      top: 22%;
-      transform: rotate(4deg)
-    }
-
-    .stack img:nth-child(3) {
-      left: 11%;
-      bottom: 0;
-      transform: rotate(-1deg)
-    }
-
-    @media (max-width:900px) {
-      .hero .wrap {
-        grid-template-columns: 1fr
-      }
-
-      .hero {
-        padding-block: 48px 40px
-      }
-
-      .stack {
-        max-width: 560px
-      }
-    }
-
-    section {
-      padding-block: 80px
-    }
-
-    .sec-head {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      max-width: 640px;
-      margin-bottom: 34px
-    }
-
-    .sec-head h2 {
-      font-size: clamp(30px, 4vw, 44px)
-    }
-
-    .sec-head p {
-      color: var(--muted)
-    }
-
-    /* finder */
-    #tools {
-      background: var(--bg2);
-      border-block: 1px solid var(--line)
-    }
-
-    .chips {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 28px
-    }
-
-    .chip {
-      border: 1px solid var(--line2);
-      background: var(--card);
-      color: var(--text);
-      padding: 10px 18px;
-      border-radius: 999px;
-      font: 500 15px var(--body);
-      cursor: pointer
-    }
-
-    .chip[aria-pressed="true"] {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff
-    }
-
-    .chip span {
-      opacity: .7;
-      margin-left: 6px;
-      font-size: 13px
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 22px
-    }
-
-    @media (max-width:420px) {
-      .grid {
-        grid-template-columns: 1fr
-      }
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--r);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      transition: border-color .2s, transform .2s
-    }
-
-    .card:hover {
-      border-color: var(--line2);
-      transform: translateY(-2px)
-    }
-
-    .card.free {
-      border-color: color-mix(in srgb, var(--mint) 55%, transparent)
-    }
-
-    .card img {
-      width: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      display: block;
-      border-bottom: 1px solid var(--line)
-    }
-
-    .card .in {
-      padding: 20px 22px 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      flex: 1
-    }
-
-    .meta {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap
-    }
-
-    .tag {
-      font-size: 11.5px;
-      font-weight: 600;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 6px;
-      background: color-mix(in srgb, var(--accent) 16%, transparent);
-      color: var(--accent-ink)
-    }
-
-    .tag.mint {
-      background: color-mix(in srgb, var(--mint) 16%, transparent);
-      color: var(--mint)
-    }
-
-    .tag.amber {
-      background: color-mix(in srgb, var(--amber) 18%, transparent);
-      color: var(--amber)
-    }
-
-    .card h3 {
-      font-size: 24px
-    }
-
-    .card .one {
-      color: var(--muted);
-      font-size: 15px
-    }
-
-    .card ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 6px;
-      font-size: 14.5px
-    }
-
-    .card ul li {
-      display: flex;
-      gap: 9px
-    }
-
-    .card ul li::before {
-      content: "✓";
-      color: var(--mint);
-      font-weight: 700;
-      flex: none
-    }
-
-    details {
-      border-top: 1px solid var(--line);
-      padding-top: 10px
-    }
-
-    details summary {
-      cursor: pointer;
-      font-size: 14px;
-      color: var(--accent-ink);
-      font-weight: 600;
-      list-style: none
-    }
-
-    details summary::-webkit-details-marker {
-      display: none
-    }
-
-    details summary::after {
-      content: " +"
-    }
-
-    details[open] summary::after {
-      content: " −"
-    }
-
-    details p {
-      font-size: 14px;
-      color: var(--muted);
-      margin-top: 8px
-    }
-
-    .works {
-      font-size: 13px;
-      color: var(--muted)
-    }
-
-    .works b {
-      color: var(--text);
-      font-weight: 600
-    }
-
-    .card .btn {
-      margin-top: auto;
-      width: 100%
-    }
-
-    .empty {
-      color: var(--muted)
-    }
-
-    /* why */
-    .why {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 28px
-    }
-
-    .why div {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      min-width: 0
-    }
-
-    .why svg {
-      color: var(--accent-ink)
-    }
-
-    .why h3 {
-      font-size: 21px
-    }
-
-    .why p {
-      color: var(--muted);
-      font-size: 15px
-    }
-
-    @media (max-width:900px) {
-      .why {
-        grid-template-columns: repeat(2, minmax(0, 1fr))
-      }
-    }
-
-    @media (max-width:520px) {
-      .why {
-        grid-template-columns: 1fr
-      }
-    }
-
-    /* devices */
-    .tbl-wrap {
-      overflow-x: auto;
-      border: 1px solid var(--line);
-      border-radius: var(--r);
-      background: var(--card)
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 15px;
-      min-width: 620px
-    }
-
-    th,
-    td {
-      text-align: left;
-      padding: 14px 18px;
-      border-bottom: 1px solid var(--line)
-    }
-
-    th {
-      font-size: 12px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-weight: 600
-    }
-
-    tr:last-child td {
-      border-bottom: 0
-    }
-
-    td.y {
-      color: var(--mint);
-      font-weight: 600
-    }
-
-    td.n {
-      color: var(--muted)
-    }
-
-    /* free band */
-    .band {
-      border: 1px solid color-mix(in srgb, var(--mint) 45%, transparent);
-      border-radius: 28px;
-      background: radial-gradient(600px 300px at 90% 0%, color-mix(in srgb, var(--mint) 18%, transparent), transparent 70%), var(--card);
-      padding: clamp(28px, 5vw, 56px);
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, .9fr);
-      gap: 36px;
-      align-items: center
-    }
-
-    .band h2 {
-      font-size: clamp(28px, 3.6vw, 42px)
-    }
-
-    .band p {
-      color: var(--muted);
-      margin-top: 14px
-    }
-
-    .band img {
-      border-radius: 14px;
-      box-shadow: var(--shadow)
-    }
-
-    @media (max-width:820px) {
-      .band {
-        grid-template-columns: 1fr
-      }
-    }
-
-    /* story */
-    .story {
-      display: grid;
-      grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
-      gap: 48px;
-      align-items: start
-    }
-
-    .story blockquote {
-      margin: 0;
-      font-family: var(--display);
-      font-style: italic;
-      font-size: clamp(26px, 3.2vw, 36px);
-      line-height: 1.25;
-      color: var(--text)
-    }
-
-    .story .txt {
-      display: grid;
-      gap: 16px;
-      color: var(--muted);
-      max-width: 36em
-    }
-
-    .story .txt strong {
-      color: var(--text);
-      font-weight: 600
-    }
-
-    @media (max-width:820px) {
-      .story {
-        grid-template-columns: 1fr;
-        gap: 24px
-      }
-    }
-
-    /* faq */
-    .faq {
-      display: grid;
-      gap: 12px;
-      max-width: 820px
-    }
-
-    .faq details {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 18px 22px;
-      background: var(--card)
-    }
-
-    .faq summary {
-      font-size: 17px;
-      color: var(--text);
-      font-weight: 600;
-      display: flex;
-      justify-content: space-between;
-      gap: 16px
-    }
-
-    .faq summary::after {
-      content: "+";
-      color: var(--accent-ink);
-      font-weight: 500
-    }
-
-    .faq details[open] summary::after {
-      content: "−"
-    }
-
-    .faq details p {
-      font-size: 15.5px;
-      margin-top: 10px;
-      line-height: 1.65
-    }
-
-    /* final */
-    .final {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 18px
-    }
-
-    .final h2 {
-      font-size: clamp(32px, 4.6vw, 52px);
-      max-width: 16em
-    }
-
-    .final p {
-      color: var(--muted);
-      max-width: 34em
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding-block: 34px;
-      color: var(--muted);
-      font-size: 14px
-    }
-
-    footer .wrap {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap
-    }
-
-    .toast {
-      position: fixed;
-      left: 50%;
-      bottom: calc(24px + env(safe-area-inset-bottom, 0px));
-      transform: translateX(-50%) translateY(20px);
-      background: var(--text);
-      color: var(--bg);
-      padding: 10px 18px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 600;
-      opacity: 0;
-      pointer-events: none;
-      transition: .25s;
-      z-index: 40
-    }
-
-    .toast.on {
-      opacity: 1;
-      transform: translateX(-50%)
-    }
-
-    body {
-      margin: 0
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KREXZA · Digital Tools for Students, Freelancers &amp; Small Businesses</title>
+<meta name="description" content="KREXZA makes simple digital tools for students, freelancers, small businesses and personal trainers. Offline apps, Google Sheets templates and guides. Pay once, keep forever.">
+<link rel="canonical" href="https://krexza.netlify.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KREXZA">
+<meta property="og:title" content="KREXZA · Digital Tools for Students, Freelancers &amp; Small Businesses">
+<meta property="og:description" content="KREXZA makes simple digital tools for students, freelancers, small businesses and personal trainers. Offline apps, Google Sheets templates and guides. Pay once, keep forever.">
+<meta property="og:url" content="https://krexza.netlify.app/">
+<meta property="og:image" content="https://krexza.netlify.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://krexza.netlify.app/og.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "KREXZA", "url": "https://krexza.netlify.app/", "logo": "https://krexza.netlify.app/apple-touch-icon.png", "slogan": "Beyond the Code", "sameAs": ["https://whop.com/krexza/"]}</script>
+<meta name="theme-color" content="#0B1524">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Jost:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="site.css">
+<script>document.documentElement.classList.add("js");try{var m=localStorage.getItem("krexza-theme");if(m==="light"||m==="dark")document.documentElement.classList.add("force-"+m)}catch(e){}</script>
 </head>
-
 <body>
-
-
-  <header id="top">
-    <div class="wrap nav">
-      <a class="brand" href="#home" aria-label="KREXZA home">
-        <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
-          <circle cx="13" cy="13" r="12" fill="none" stroke="currentColor" stroke-opacity=".35" />
-          <path d="M17.5 5.5a8 8 0 1 0 3 11.5A6.2 6.2 0 0 1 17.5 5.5z" fill="var(--accent)" />
-        </svg>
-        KREXZA
-      </a>
-      <nav aria-label="Main"><a href="#tools">Tools</a><a href="#free">Free vault</a><a href="#why">Why KREXZA</a><a
-          href="#faq">FAQ</a></nav>
-      <a class="btn p sm" href="https://whop.com/krexza/" target="_blank" rel="noopener">Visit store</a>
-      <button class="theme" id="themeBtn" type="button" aria-label="Switch light or dark theme">
-        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-          <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0 1.5v11a5.5 5.5 0 0 1 0-11z" fill="currentColor" />
-        </svg>
-      </button>
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a class="logo" href="index.html" aria-label="KREXZA home"><svg class="mk" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="700 420 1320 760" fill="none" stroke="currentColor">
+  <mask id="kxs" maskUnits="userSpaceOnUse" x="700" y="420" width="1320" height="760"><rect x="700" y="420" width="1320" height="760" fill="#fff"/><path d="M1372 800L1600 572M1372 800L1600 1028" stroke="#000" stroke-width="58"/></mask>
+  <g mask="url(#kxs)" stroke-width="40"><circle cx="1079.5" cy="799.5" r="343"/><circle cx="1639.5" cy="799.5" r="343"/></g>
+  <rect x="1345" y="622" width="30" height="356" stroke-width="16"/>
+  <path d="M1372 800L1585 587M1372 800L1585 1013" stroke-width="20" stroke-linecap="round"/>
+</svg>
+<span class="logo-word">KREXZA</span></a>
+    <nav class="nav" aria-label="Main"><a href="index.html" aria-current="page">Home</a><a href="tools.html">Tools</a><a href="ai-prompt-vault.html">Free Vault</a><a href="about.html">About</a><a href="faq.html">FAQ</a></nav>
+    <div class="hdr-act">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch light or dark theme"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg></button>
+      <a class="btn btn-solid btn-sm hdr-cta magnetic" href="https://whop.com/krexza/" target="_blank" rel="noopener">Shop on Whop <svg class="ar" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span></button>
     </div>
-  </header>
-
-  <div class="strip">
-    <div class="wrap"><span><b>New to KREXZA?</b> Start with the AI Prompt Vault: 60 AI prompts, completely
-        free.</span><a class="code" href="#free"
-        style="text-decoration:none;font-family:var(--body);letter-spacing:0">Get it free</a></div>
   </div>
+</header>
+<div class="mnav" id="mnav">
+  <nav class="wrap mnav-in" aria-label="Mobile"><a class="m-link" href="index.html" aria-current="page"><span>Home</span></a><a class="m-link" href="tools.html"><span>Tools</span></a><a class="m-link" href="ai-prompt-vault.html"><span>Free Vault</span></a><a class="m-link" href="about.html"><span>About</span></a><a class="m-link" href="faq.html"><span>FAQ</span></a>
+    <a class="btn btn-solid m-cta" href="https://whop.com/krexza/" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.3a2 2 0 0 1-2 1.7H8.2a2 2 0 0 1-2-1.7L5 8zM9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg> Shop on Whop</a>
+    <p class="m-note">Pay once · No subscription · Works offline</p>
+  </nav>
+</div>
+<main id="main">
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <p class="kicker hero-k" data-fade>KREXZA · Beyond the Code</p>
+    <h1 class="display" data-lines><span class="ln"><span>Simple tools for the work</span></span><span class="ln"><span>that keeps you <em>up at night.</em></span></span></h1>
+    <div class="hero-copy">
+      <p class="lede" data-fade>Dashboards, templates and guides for students, freelancers, small businesses and personal trainers. Built with care, tested before release, and yours after one payment.</p>
+      <div class="btns" data-fade><a class="btn btn-solid magnetic" href="tools.html">Explore the tools <svg class="ar" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn-line" href="ai-prompt-vault.html">Get the free AI Prompt Vault</a></div>
+      <ul class="hero-points" data-fade><li>One-time price</li><li>No subscription</li><li>Works offline</li><li>Your data stays yours</li></ul>
+    </div>
+    <div class="hero-art"><svg class="hero-mark" viewBox="700 420 1320 760" fill="none" stroke="currentColor" aria-hidden="true">
+  <mask id="kxl" maskUnits="userSpaceOnUse" x="700" y="420" width="1320" height="760"><rect x="700" y="420" width="1320" height="760" fill="#fff"/><path d="M1368 800L1600 568M1368 800L1600 1032" stroke="#000" stroke-width="34"/></mask>
+  <g mask="url(#kxl)" stroke-width="10"><circle class="draw" cx="1079.5" cy="799.5" r="351.5"/><circle class="draw" cx="1639.5" cy="799.5" r="351.5"/></g>
+  <rect class="draw" x="1350" y="616" width="20" height="368" stroke-width="4"/>
+  <path class="draw" d="M1368 800L1593 575" stroke-width="5" stroke-linecap="round"/><path class="draw" d="M1368 800L1593 1025" stroke-width="5" stroke-linecap="round"/>
+</svg>
+      <figure class="float f1"><img src="img/trainer.webp" alt="Trainer OS dashboard" width="1200" height="675"></figure>
+      <figure class="float f2"><img src="img/invoice.webp" alt="Smart Invoice and Client Tracker" width="1200" height="675"></figure>
+    </div>
+  </div>
+</section>
 
-  <main id="home">
-    <section class="hero" aria-labelledby="hero-title">
-      <canvas id="sky" aria-hidden="true"></canvas>
-      <div class="wrap">
-        <div>
-          <p class="eyebrow">KREXZA · Beyond the Code</p>
-          <h1 id="hero-title">Simple tools for the work that keeps you <em>up at night.</em></h1>
-          <p class="lede">Dashboards, templates and guides for students, freelancers, small businesses and personal
-            trainers. Built in silent nights, tested before release, and yours to keep after one payment.</p>
-          <div class="cta-row">
-            <a class="btn p" href="#tools">Find my tool</a>
-            <a class="btn g" href="#free">Get the free AI Prompt Vault</a>
-          </div>
-          <ul class="promise">
-            <li>One-time price</li>
-            <li>No subscription</li>
-            <li>Works offline</li>
-            <li>Your data stays on your device</li>
-          </ul>
-        </div>
-        <div class="stack" aria-hidden="true">
-          <img src="img/student.webp" alt="" width="1200" height="675">
-          <img src="img/invoice.webp" alt="" width="1200" height="675">
-          <img src="img/trainer.webp" alt="" width="1200" height="675">
-        </div>
+<section class="marquee" aria-label="Who KREXZA is for"><div class="mq-track"><span>Students</span><i aria-hidden="true">✦</i><span>Freelancers</span><i aria-hidden="true">✦</i><span>Small businesses</span><i aria-hidden="true">✦</i><span>Personal trainers</span><i aria-hidden="true">✦</i><span>Everyday life</span><i aria-hidden="true">✦</i><span>Students</span><i aria-hidden="true">✦</i><span>Freelancers</span><i aria-hidden="true">✦</i><span>Small businesses</span><i aria-hidden="true">✦</i><span>Personal trainers</span><i aria-hidden="true">✦</i><span>Everyday life</span><i aria-hidden="true">✦</i></div></section>
+
+<section class="stats"><div class="wrap stats-in">
+  <div class="stat" data-reveal><b data-count="8">8</b><span>tools and guides</span></div>
+  <div class="stat" data-reveal><b data-count="1">1</b><span>payment, yours to keep</span></div>
+  <div class="stat" data-reveal><b data-count="0">0</b><span>subscriptions</span></div>
+  <div class="stat" data-reveal><b data-count="0">0</b><span>accounts or sign-ups</span></div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <div class="sec-head"><p class="kicker" data-fade>Choose your world</p><h2 class="" data-lines><span class="ln"><span>Who are you building</span></span><span class="ln"><span>for <em>today?</em></span></span></h2></div>
+  <div class="worlds"><a class="world" href="tools.html#student" data-img="img/student.webp" data-reveal>
+      <span class="w-name">Students</span><span class="w-desc">Deadlines, grades, budgets and AI study prompts.</span><span class="w-count">3 tools</span><span class="w-go"><svg class="ar" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a><a class="world" href="tools.html#freelancer" data-img="img/freelancer.webp" data-reveal>
+      <span class="w-name">Freelancers</span><span class="w-desc">Win clients, send invoices and track your income.</span><span class="w-count">4 tools</span><span class="w-go"><svg class="ar" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a><a class="world" href="tools.html#business" data-img="img/invoice.webp" data-reveal>
+      <span class="w-name">Small businesses</span><span class="w-desc">Branded invoices, overdue payments and client balances.</span><span class="w-count">3 tools</span><span class="w-go"><svg class="ar" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a><a class="world" href="tools.html#trainer" data-img="img/trainer.webp" data-reveal>
+      <span class="w-name">Personal trainers</span><span class="w-desc">Clients, programs, PRs and session packages.</span><span class="w-count">1 tools</span><span class="w-go"><svg class="ar" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a><a class="world" href="tools.html#life" data-img="img/woman.webp" data-reveal>
+      <span class="w-name">Everyday life</span><span class="w-desc">Money, confidence and calmer days.</span><span class="w-count">3 tools</span><span class="w-go"><svg class="ar" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+</div></section>
+<div class="follow" aria-hidden="true"><img src="img/student.webp" alt=""></div>
+
+<section class="sec sec-alt"><div class="wrap">
+  <div class="sec-head row"><div><p class="kicker" data-fade>Signature tools</p><h2 class="" data-lines><span class="ln"><span>Three tools to <em>start with.</em></span></span></h2></div><a class="link-arrow" href="tools.html" data-fade>See all 8 tools <svg class="ar" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+  <div class="pgrid"><article class="pcard" data-who="trainer business" data-reveal>
+  <a class="pcard-img" href="trainer-os.html" tabindex="-1" aria-hidden="true"><img src="img/trainer.webp" alt="" width="1200" height="675" loading="lazy"></a>
+  <div class="pcard-body">
+    <p class="kicker">Offline app</p>
+    <h3><a href="trainer-os.html">Trainer OS</a></h3>
+    <p class="pcard-one">Clients, workouts, personal records and payments for personal trainers, in one private dashboard.</p>
+    <div class="pcard-act"><a class="link-arrow" href="trainer-os.html">View details <svg class="ar" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn-line btn-sm" href="https://whop.com/krexza/" target="_blank" rel="noopener">Buy on Whop</a></div>
+  </div>
+</article><article class="pcard" data-who="business freelancer" data-reveal>
+  <a class="pcard-img" href="smart-invoice.html" tabindex="-1" aria-hidden="true"><img src="img/invoice.webp" alt="" width="1200" height="675" loading="lazy"></a>
+  <div class="pcard-body">
+    <p class="kicker">Google Sheets &amp; Excel</p>
+    <h3><a href="smart-invoice.html">Smart Invoice &amp; Client Tracker</a></h3>
+    <p class="pcard-one">Branded invoices in a minute, and a clear view of which customers still owe you.</p>
+    <div class="pcard-act"><a class="link-arrow" href="smart-invoice.html">View details <svg class="ar" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn-line btn-sm" href="https://whop.com/krexza/" target="_blank" rel="noopener">Buy on Whop</a></div>
+  </div>
+</article><article class="pcard" data-who="student" data-reveal>
+  <a class="pcard-img" href="student-os.html" tabindex="-1" aria-hidden="true"><img src="img/student.webp" alt="" width="1200" height="675" loading="lazy"></a>
+  <div class="pcard-body">
+    <p class="kicker">Offline app</p>
+    <h3><a href="student-os.html">Student OS</a></h3>
+    <p class="pcard-one">Grades, deadlines, exams and focus in one calm dashboard.</p>
+    <div class="pcard-act"><a class="link-arrow" href="student-os.html">View details <svg class="ar" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn-line btn-sm" href="https://whop.com/krexza/" target="_blank" rel="noopener">Buy on Whop</a></div>
+  </div>
+</article></div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <div class="sec-head"><p class="kicker" data-fade>The KREXZA promise</p><h2 class="" data-lines><span class="ln"><span>Made to be used every day,</span></span><span class="ln"><span><em>not to collect dust.</em></span></span></h2></div>
+  <div class="princ"><div class="pr" data-reveal><span class="pr-line"></span><h3>Pay once</h3><p>No monthly fees. Buy a tool once and keep using it for as long as you like.</p></div><div class="pr" data-reveal><span class="pr-line"></span><h3>Private by design</h3><p>No sign-up and no cloud. Your clients, grades and money stay on your own device.</p></div><div class="pr" data-reveal><span class="pr-line"></span><h3>Works offline</h3><p>The apps run from a single file in your browser, with or without internet.</p></div><div class="pr" data-reveal><span class="pr-line"></span><h3>Made for everywhere</h3><p>Any currency, kg or lb, and clear English from Lagos to London to Lahore.</p></div></div>
+</div></section>
+
+<section class="sec"><div class="wrap vault-band" data-reveal>
+  <div class="vb-copy">
+    <p class="kicker">Free · No catch</p>
+    <h2 class="h2">Start with 60 AI prompts you can use <em>tonight.</em></h2>
+    <p>Pick a prompt, type your real details into the boxes, and the prompt writes itself. Copy it in one click and paste it into ChatGPT, Claude, Gemini or Copilot.</p>
+    <div class="btns"><a class="btn btn-solid magnetic" href="https://whop.com/krexza/" target="_blank" rel="noopener">Get it free on Whop <svg class="ar" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn-line" href="ai-prompt-vault.html">See what's inside</a></div>
+  </div>
+  <figure class="vb-img"><img src="img/vault.webp" alt="AI Prompt Vault app" width="1200" height="675" loading="lazy" data-parallax></figure>
+</div></section>
+
+<section class="sec quote-sec"><div class="wrap quote">
+  <svg class="q-mark" viewBox="700 420 1320 760" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="1079.5" cy="799.5" r="351.5" stroke-width="6"/><circle cx="1639.5" cy="799.5" r="351.5" stroke-width="6"/></svg>
+  <blockquote data-reveal>“KREXZA should be the place you go when technology is getting in your way.”</blockquote>
+  <p data-reveal>The founder, KREXZA · <a class="link-arrow" href="about.html">Read the story <svg class="ar" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+</div></section>
+
+<section class="cta-band"><div class="wrap cta-in">
+  <h2 class="" data-lines><span class="ln"><span>Find the tool that gives you</span></span><span class="ln"><span><em>your evenings back.</em></span></span></h2>
+  <p data-reveal>Eight tools today, more on the way. Start free, or pick the one made for you.</p>
+  <div class="btns" data-reveal><a class="btn btn-solid magnetic" href="https://whop.com/krexza/" target="_blank" rel="noopener">Visit the KREXZA store <svg class="ar" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn-line" href="tools.html">Browse tools</a></div>
+</div></section>
+</main>
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-top">
+      <div class="ftr-brand">
+        <a class="logo" href="index.html" aria-label="KREXZA home"><svg class="mk" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="700 420 1320 760" fill="none" stroke="currentColor">
+  <mask id="kxs" maskUnits="userSpaceOnUse" x="700" y="420" width="1320" height="760"><rect x="700" y="420" width="1320" height="760" fill="#fff"/><path d="M1372 800L1600 572M1372 800L1600 1028" stroke="#000" stroke-width="58"/></mask>
+  <g mask="url(#kxs)" stroke-width="40"><circle cx="1079.5" cy="799.5" r="343"/><circle cx="1639.5" cy="799.5" r="343"/></g>
+  <rect x="1345" y="622" width="30" height="356" stroke-width="16"/>
+  <path d="M1372 800L1585 587M1372 800L1585 1013" stroke-width="20" stroke-linecap="round"/>
+</svg>
+<span class="logo-word">KREXZA</span></a>
+        <p>Simple digital tools for students, freelancers, small businesses and trainers. Built in silent nights, made for big dreams.</p>
+        <a class="btn btn-solid btn-sm magnetic" href="https://whop.com/krexza/" target="_blank" rel="noopener">Visit the store <svg class="ar" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
-    </section>
-
-    <section id="tools" aria-labelledby="tools-title">
-      <div class="wrap">
-        <div class="sec-head">
-          <p class="eyebrow">The toolkit</p>
-          <h2 id="tools-title">Who are you building for today?</h2>
-          <p>Pick what describes you. Every tool opens in your browser or in Google Sheets, with no account and no
-            setup.</p>
-        </div>
-        <div class="chips" role="group" aria-label="Filter tools by who they are for" id="chips"></div>
-        <div class="grid" id="grid" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <section id="why" aria-labelledby="why-title">
-      <div class="wrap">
-        <div class="sec-head">
-          <p class="eyebrow">Why KREXZA</p>
-          <h2 id="why-title">Made to be used every day, not to collect dust.</h2>
-        </div>
-        <div class="why">
-          <div><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="3" y="6" width="18" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="1.6" />
-              <path d="M8 6V4.5A1.5 1.5 0 0 1 9.5 3h5A1.5 1.5 0 0 1 16 4.5V6" fill="none" stroke="currentColor"
-                stroke-width="1.6" />
-            </svg>
-            <h3>Pay once</h3>
-            <p>No monthly fees. Buy a tool once and keep using it for as long as you like.</p>
-          </div>
-          <div><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 3l7 3v5c0 4.4-3 8.3-7 10-4-1.7-7-5.6-7-10V6l7-3z" fill="none" stroke="currentColor"
-                stroke-width="1.6" />
-            </svg>
-            <h3>Private by design</h3>
-            <p>No sign-up and no cloud. Your clients, grades and money data stay on your own device.</p>
-          </div>
-          <div><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M2 9a15 15 0 0 1 20 0M5.5 12.5a10 10 0 0 1 13 0M9 16a5 5 0 0 1 6 0" fill="none"
-                stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-              <circle cx="12" cy="19.5" r="1.3" fill="currentColor" />
-            </svg>
-            <h3>Works offline</h3>
-            <p>The apps run from a single file in your browser, with or without internet.</p>
-          </div>
-          <div><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6" />
-              <path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"
-                fill="none" stroke="currentColor" stroke-width="1.6" />
-            </svg>
-            <h3>Built for everywhere</h3>
-            <p>Any currency, kg or lb, and English that works from Lagos to London to Lahore.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section aria-labelledby="dev-title" style="padding-top:0">
-      <div class="wrap">
-        <div class="sec-head">
-          <p class="eyebrow">Before you buy</p>
-          <h2 id="dev-title">Check it works on your device.</h2>
-          <p>No surprises after checkout. Here is exactly where each type of tool runs.</p>
-        </div>
-        <div class="tbl-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Tool type</th>
-                <th>Windows · Mac · Chromebook</th>
-                <th>Android</th>
-                <th>iPhone · iPad</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><b>Offline apps</b><br><span class="works">Student OS, Freelancer OS, Trainer OS, AI Prompt
-                    Vault</span></td>
-                <td class="y">Yes, any modern browser</td>
-                <td class="y">Yes, open with Chrome</td>
-                <td class="n">Not supported. Use a computer.</td>
-              </tr>
-              <tr>
-                <td><b>Spreadsheet templates</b><br><span class="works">Smart Invoice Tracker, Budget Tracker</span>
-                </td>
-                <td class="y">Yes, Google Sheets or Excel</td>
-                <td class="y">Yes, Google Sheets app</td>
-                <td class="y">Yes, Google Sheets app</td>
-              </tr>
-              <tr>
-                <td><b>PDF guides</b><br><span class="works">Fiverr: Zero to First Order, The Modern Woman</span></td>
-                <td class="y">Yes</td>
-                <td class="y">Yes</td>
-                <td class="y">Yes</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section id="free" aria-labelledby="free-title" style="padding-top:0">
-      <div class="wrap">
-        <div class="band">
-          <div>
-            <p class="eyebrow" style="color:var(--mint)">Free · No catch</p>
-            <h2 id="free-title" style="margin-top:12px">Start with 60 AI prompts you can use tonight.</h2>
-            <p>The AI Prompt Vault gives you fill-in-the-blank prompts for study, freelancing, content and money. Fill
-              the boxes, copy, and paste into ChatGPT, Claude, Gemini or Copilot.</p>
-            <div class="cta-row"><a class="btn p" style="background:var(--mint);color:var(--btn-ink)"
-                href="https://whop.com/krexza/" target="_blank" rel="noopener">Get it free on Whop</a></div>
-          </div>
-          <img src="img/vault.webp" alt="AI Prompt Vault app showing prompt categories" width="1200" height="675"
-            loading="lazy">
-        </div>
-      </div>
-    </section>
-
-    <section aria-labelledby="story-title" style="padding-top:0">
-      <div class="wrap story">
-        <blockquote id="story-title">“Built in silent nights, made for big dreams.”</blockquote>
-        <div class="txt">
-          <p><strong>KREXZA started as late-night projects by a self-taught web developer.</strong> Each tool began as a
-            problem I or someone close to me had: a student juggling deadlines, a freelancer waiting on payment, a
-            trainer tracking clients on paper.</p>
-          <p>Every tool is tested before it reaches the store: the formulas are checked, the apps are clicked through on
-            desktop and phone, and the guides are proofread. If something doesn't work for you, tell me and I'll fix it.
-          </p>
-          <p>The goal is simple. KREXZA should be the place you go when technology is getting in your way.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq" aria-labelledby="faq-title" style="padding-top:0">
-      <div class="wrap">
-        <div class="sec-head">
-          <p class="eyebrow">Questions</p>
-          <h2 id="faq-title">Good to know</h2>
-        </div>
-        <div class="faq">
-          <details>
-            <summary>Is this a subscription?</summary>
-            <p>No. Every paid KREXZA tool is a one-time purchase. You pay once on Whop and download it straight away.
-            </p>
-          </details>
-          <details>
-            <summary>How do I get my tool after buying?</summary>
-            <p>Checkout happens on Whop. Right after payment, your files are ready to download from your Whop account.
-              Most tools take about two minutes to set up, and the apps and templates come with simple instructions.</p>
-          </details>
-          <details>
-            <summary>Does it work on my iPhone?</summary>
-            <p>The spreadsheet templates and PDF guides work on iPhone and iPad. The offline apps (Student OS,
-              Freelancer OS, Trainer OS and the AI Prompt Vault) need a computer or an Android phone with Chrome. See
-              the device table above.</p>
-          </details>
-          <details>
-            <summary>Where is my data stored?</summary>
-            <p>On your own device. The apps save to your browser, and the templates live in your own Google Drive or
-              Excel file. KREXZA never sees your data. The apps include a backup button so you can move your data to
-              another computer.</p>
-          </details>
-          <details>
-            <summary>Do I need to know Excel or coding?</summary>
-            <p>No. You type in the highlighted boxes and everything else calculates itself. The dashboard apps can load
-              sample data so you can see how they work before adding your own.</p>
-          </details>
-          <details>
-            <summary>Can I use these for my business?</summary>
-            <p>Yes. Each license covers your own personal or business use. Please don't resell or share the files.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section aria-labelledby="final-title" style="padding-top:0">
-      <div class="wrap final">
-        <p class="eyebrow">Your next step</p>
-        <h2 id="final-title">Find the tool that gives you your evenings back.</h2>
-        <p>Eight tools today, more on the way. Start free, or pick the one made for you.</p>
-        <div class="cta-row" style="justify-content:center"><a class="btn p" href="https://whop.com/krexza/"
-            target="_blank" rel="noopener">Visit the KREXZA store</a><a class="btn g" href="#tools">Browse tools</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap"><span>© 2026 KREXZA · Beyond the Code</span><span>Secure checkout and instant downloads on <a
-          href="https://whop.com/krexza/" target="_blank" rel="noopener">Whop</a></span></div>
-  </footer>
-  <div class="toast" id="toast" role="status"></div>
-
-  <script>
-    (function () {
-      "use strict";
-      var STORE = "https://whop.com/krexza/";
-      /* Set url to each product's own Whop link when you have it. */
-      var PRODUCTS = [
-        {
-          id: "student", name: "Student OS", who: ["student"], type: "Offline app", tagc: "", img: "student", url: STORE,
-          one: "Grades, deadlines, exams and focus in one calm dashboard.",
-          pts: ["GPA and target-score calculator", "Exam countdowns and weekly timetable", "Focus timer with study streaks"],
-          more: "Track every course and assignment, see exactly what score you need on your next exam, keep notes by course, and back up your data with one click.", works: "Computer or Android"
-        },
-        {
-          id: "freelancer", name: "Freelancer OS", who: ["freelancer"], type: "Offline app", tagc: "", img: "freelancer", url: STORE,
-          one: "Clients, invoices and income for your whole freelance business.",
-          pts: ["Professional invoices to PDF", "Proposal pipeline and client manager", "Income, expenses and tax set-aside"],
-          more: "Overdue alerts show who still owes you, and each invoice can use its own currency from 30+ options.", works: "Computer or Android"
-        },
-        {
-          id: "fiverr", name: "Fiverr: Zero to First Order", who: ["freelancer"], type: "PDF guide", tagc: "amber", img: "fiverr", url: STORE,
-          one: "Build a gig buyers actually find and win your first client.",
-          pts: ["Profile and gig formulas", "30-day action plan", "8 ready-to-use buyer scripts"],
-          more: "11 chapters plus a bonus, including getting paid worldwide, account safety rules and a gig builder worksheet. Independent guide, not affiliated with Fiverr.", works: "Every device"
-        },
-        {
-          id: "invoice", name: "Smart Invoice & Client Tracker", who: ["business", "freelancer"], type: "Google Sheets & Excel", tagc: "mint", img: "invoice", url: STORE,
-          one: "Branded invoices in a minute and a clear view of who still owes you.",
-          pts: ["Automatic Paid, Partial, Unpaid and Overdue status", "Live dashboard with overdue aging report", "Tax, discounts and any currency"],
-          more: "Holds 500 invoices, 1,000 line items and 200 clients per file. Works in the free Google Sheets app on iPhone and Android.", works: "Every device"
-        },
-        {
-          id: "trainer", name: "Trainer OS", who: ["trainer", "business"], type: "Offline app", tagc: "", img: "trainer", url: STORE,
-          one: "Clients, workouts, PRs and payments for personal trainers.",
-          pts: ["Program builder with 60+ exercises", "Workout logger with automatic PR detection", "Session packages and renewal alerts"],
-          more: "Send clients a clean PDF training plan with your own name and logo, and track body weight and strength progress with charts. kg or lb.", works: "Computer or Android"
-        },
-        {
-          id: "budget", name: "Personal Budget Tracker", who: ["life", "student"], type: "Google Sheets & Excel", tagc: "mint", img: "budget", url: STORE,
-          one: "See where every dollar goes, in a few minutes a day.",
-          pts: ["Automatic dashboard and charts", "50/30/20 plan, savings goals and debt payoff", "Money Mastery guide with a 30-day plan"],
-          more: "Works in any currency. Includes a 12-page guide that walks you through building the habit.", works: "Every device"
-        },
-        {
-          id: "woman", name: "The Modern Woman", who: ["life"], type: "PDF bundle", tagc: "amber", img: "woman", url: STORE,
-          one: "365 rules of grace, confidence and self-respect.",
-          pts: ["Printable 30-day transformation workbook", "Phrases for hard moments", "Emergency etiquette guide"],
-          more: "Two elegant PDFs, 56 pages in total, plus 7 bonus codes to live by.", works: "Every device"
-        },
-        {
-          id: "vault", name: "AI Prompt Vault", who: ["student", "freelancer", "business", "life"], type: "Offline app + PDF", tagc: "mint", img: "vault", url: STORE, free: true,
-          one: "60 fill-in-the-blank AI prompts to study smarter, earn online and grow.",
-          pts: ["Fill the blanks, copy in one click", "Study, freelancing, content and money", "Works with ChatGPT, Claude, Gemini, Copilot"],
-          more: "Includes the interactive app and a printable PDF edition. Your answers are remembered on your device.", works: "App: computer or Android · PDF: every device"
-        }
-      ];
-      var GROUPS = [["all", "Everyone"], ["student", "Student"], ["freelancer", "Freelancer"], ["business", "Small business"], ["trainer", "Personal trainer"], ["life", "Everyday life"]];
-      function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[c]; }); }
-      var current = "all";
-      try { var saved = localStorage.getItem("krexza-filter"); if (saved && GROUPS.some(function (g) { return g[0] === saved; })) current = saved; } catch (e) { }
-      var chips = document.getElementById("chips"), grid = document.getElementById("grid");
-      function count(k) { return k === "all" ? PRODUCTS.length : PRODUCTS.filter(function (p) { return p.who.indexOf(k) >= 0; }).length; }
-      function renderChips() {
-        chips.innerHTML = GROUPS.map(function (g) { return '<button class="chip" type="button" data-k="' + g[0] + '" aria-pressed="' + (g[0] === current) + '">' + esc(g[1]) + '<span>' + count(g[0]) + '</span></button>'; }).join("");
-      }
-      function card(p) {
-        return '<article class="card' + (p.free ? ' free' : '') + '">' +
-          '<img src="img/' + p.img + '.webp" alt="' + esc(p.name) + ' preview" width="1200" height="675" loading="lazy">' +
-          '<div class="in"><div class="meta"><span class="tag ' + p.tagc + '">' + esc(p.type) + '</span>' + (p.free ? '<span class="tag mint">Free</span>' : '') + '</div>' +
-          '<h3>' + esc(p.name) + '</h3><p class="one">' + esc(p.one) + '</p>' +
-          '<ul>' + p.pts.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join("") + '</ul>' +
-          '<details><summary>What else is inside</summary><p>' + esc(p.more) + '</p></details>' +
-          '<p class="works">Works on: <b>' + esc(p.works) + '</b></p>' +
-          '<a class="btn ' + (p.free ? 'g' : 'p') + '" href="' + esc(p.url) + '" target="_blank" rel="noopener">' + (p.free ? 'Get it free on Whop' : 'Get it on Whop') + ' →</a></div></article>';
-      }
-      function renderGrid() {
-        var list = PRODUCTS.filter(function (p) { return current === "all" || p.who.indexOf(current) >= 0; });
-        list.sort(function (a, b) { return (a.free ? 1 : 0) - (b.free ? 1 : 0); });
-        grid.innerHTML = list.length ? list.map(card).join("") : '<p class="empty">No tools here yet.</p>';
-      }
-      chips.addEventListener("click", function (e) {
-        var b = e.target.closest(".chip"); if (!b) return;
-        current = b.getAttribute("data-k"); try { localStorage.setItem("krexza-filter", current); } catch (err) { }
-        renderChips(); renderGrid();
-      });
-      renderChips(); renderGrid();
-
-
-      /* copy code */
-      var toast = document.getElementById("toast");
-      function show(m) { toast.textContent = m; toast.classList.add("on"); clearTimeout(show.t); show.t = setTimeout(function () { toast.classList.remove("on"); }, 1800); }
-      document.addEventListener("click", function (e) {
-        var c = e.target.closest("[data-copy]"); if (!c) return;
-        var v = c.getAttribute("data-copy");
-        try { navigator.clipboard.writeText(v).then(function () { show("Code " + v + " copied"); }, function () { selectIt(c); }); } catch (err) { selectIt(c); }
-      });
-      function selectIt(el) { var r = document.createRange(); r.selectNodeContents(el); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); show("Code selected. Press copy."); }
-
-      /* theme */
-      var root = document.documentElement;
-      function isDark() { return (getComputedStyle(root).colorScheme || "").indexOf("dark") >= 0; }
-      function setMode(m) { root.classList.remove("force-light", "force-dark"); if (m) root.classList.add("force-" + m); try { if (m) localStorage.setItem("krexza-theme", m); } catch (e) { } }
-      try { var savedMode = localStorage.getItem("krexza-theme"); if (savedMode === "light" || savedMode === "dark") setMode(savedMode); } catch (e) { }
-      document.getElementById("themeBtn").addEventListener("click", function () { setMode(isDark() ? "light" : "dark"); if (still) sky(); });
-
-      /* header border */
-      var hdr = document.getElementById("top");
-      window.addEventListener("scroll", function () { hdr.classList.toggle("scrolled", window.scrollY > 8); }, { passive: true });
-
-      /* night sky: deterministic stars, gentle twinkle */
-      var cv = document.getElementById("sky"), ctx = cv.getContext("2d"), stars = [], raf = 0;
-      var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      function seed(n) { var x = Math.sin(n * 9301 + 49297) * 233280; return x - Math.floor(x); }
-      function sky() {
-        var r = cv.getBoundingClientRect(), d = Math.min(window.devicePixelRatio || 1, 2);
-        cv.width = Math.max(1, r.width * d); cv.height = Math.max(1, r.height * d); ctx.setTransform(d, 0, 0, d, 0, 0);
-        var n = Math.round(r.width * r.height / 9000); stars = [];
-        for (var i = 0; i < n; i++) stars.push({ x: seed(i) * r.width, y: seed(i + 500) * r.height, s: seed(i + 900) * 1.3 + .3, p: seed(i + 1300) * 6.28 });
-        if (still) draw(0);
-      }
-      function draw(t) {
-        var r = cv.getBoundingClientRect(); ctx.clearRect(0, 0, r.width, r.height);
-        var c = getComputedStyle(root).getPropertyValue("--accent-ink").trim() || "#C9C1FF";
-        ctx.fillStyle = c;
-        for (var i = 0; i < stars.length; i++) { var st = stars[i]; ctx.globalAlpha = (isDark() ? .55 : .3) * (.55 + .45 * Math.sin(t / 1400 + st.p)); ctx.beginPath(); ctx.arc(st.x, st.y, st.s, 0, 6.283); ctx.fill(); }
-        ctx.globalAlpha = 1;
-      }
-      function loop(t) { draw(t); raf = requestAnimationFrame(loop); }
-      sky(); if (!still) raf = requestAnimationFrame(loop);
-      window.addEventListener("resize", sky);
-    })();
-  </script>
-
+      <nav class="ftr-col" aria-label="Explore"><h2>Explore</h2><a href="index.html">Home</a><a href="tools.html">Tools</a><a href="ai-prompt-vault.html">Free Vault</a><a href="about.html">About</a><a href="faq.html">FAQ</a></nav>
+      <nav class="ftr-col" aria-label="Tools"><h2>Tools</h2><a href="trainer-os.html">Trainer OS</a><a href="smart-invoice.html">Smart Invoice</a><a href="student-os.html">Student OS</a><a href="freelancer-os.html">Freelancer OS</a><a href="budget-tracker.html">Budget Tracker</a><a href="fiverr-guide.html">Fiverr Guide</a><a href="modern-woman.html">The Modern Woman</a><a href="ai-prompt-vault.html">AI Prompt Vault</a></nav>
+    </div>
+    <p class="ftr-word" aria-hidden="true">KREXZA</p>
+    <div class="ftr-bot"><span>© 2026 KREXZA · Beyond the Code</span><span class="ftr-r">Secure checkout on Whop <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch light or dark theme"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg></button></span></div>
+  </div>
+</footer>
+<a class="fab magnetic" href="https://whop.com/krexza/" target="_blank" rel="noopener" aria-label="Shop KREXZA on Whop"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.3a2 2 0 0 1-2 1.7H8.2a2 2 0 0 1-2-1.7L5 8zM9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Shop on Whop</span></a>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="site.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://krexza.netlify.app/sitemap.xml

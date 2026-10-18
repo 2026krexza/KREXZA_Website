@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="700 420 1320 760" fill="none" stroke="#A8A196">
+  <mask id="kx" maskUnits="userSpaceOnUse" x="700" y="420" width="1320" height="760"><rect x="700" y="420" width="1320" height="760" fill="#fff"/><path d="M1368 800L1600 568M1368 800L1600 1032" stroke="#000" stroke-width="34"/></mask>
+  <g mask="url(#kx)" stroke-width="24"><circle cx="1079.5" cy="799.5" r="351.5"/><circle cx="1639.5" cy="799.5" r="351.5"/></g>
+  <rect x="1349" y="616" width="22" height="368" stroke-width="8"/>
+  <path d="M1368 800L1593 575M1368 800L1593 1025" stroke-width="9" stroke-linecap="round"/>
+</svg>
