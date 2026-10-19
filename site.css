@@ -301,3 +301,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .article ul{margin:0 0 18px;padding-left:1.2em;display:flex;flex-direction:column;gap:8px}
 .article li::marker{color:var(--stone)}
 .art-cta{margin-top:36px}
+.ftr-legal{display:flex;gap:18px}
+.ftr-legal a{color:inherit;text-decoration:none}.ftr-legal a:hover{color:var(--text)}
+@media (max-width:700px){ .ftr-bot{flex-wrap:wrap;gap:12px} }
